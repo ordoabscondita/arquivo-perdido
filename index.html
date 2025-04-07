@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desbloqueie</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      display: none;
+    }
+    img {
+      max-width: 90%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Você tem a resposta?</h2>
+  <p>Digite a palavra-chave correta para revelar o próximo fragmento.</p>
+  
+  <input type="text" id="resposta" placeholder="Digite aqui...">
+  <button onclick="verificar()">Confirmar</button>
+
+  <div id="resultado">
+    <p>Você desbloqueou o fragmento perdido.</p>
+    <img src="https://cdn.discordapp.com/attachments/1131430394672185345/1358738791853981717/6f17892839a655d87950d3110495e642.jpg?ex=67f4ef9c&is=67f39e1c&hm=aa753be4d49fbb7995016c969c42d8f3549a2ad235803dda95126c14ff475080&" alt="Fragmento Revelado">
+  </div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value.toLowerCase();
+      const correta = "scientia"; // <- você pode mudar essa palavra
+      
+      if (resposta === correta) {
+        document.getElementById("resultado").style.display = "block";
+      } else {
+        alert("Resposta incorreta. Tente novamente.");
+      }
+    }
+  </script>
+</body>
+</html>
